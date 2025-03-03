@@ -1,0 +1,23 @@
+<div v-for="(item, i) in items" v-bind:key="item._id" class="item">
+  <div class="row">
+    <div class="channel light">
+      <img
+              v-if="page !== 'channel' && item.channel && item.channel.imageURL"
+              v-bind:src="item.channel.imageURL"
+              v-bind:alt="item.channel.title"
+      />
+      <a v-bind:href="'/channel/'+item.channel._id" v-if="page !== 'channel' && item.channel">{{item.channel.title}}</a>
+    </div>
+    <a v-bind:href="'/item/'+item._id" class="title">{{item.title}}</a>
+    <div class="meta light">
+      <span v-if="item.publishedOn">{{displayDate(item.publishedOn)}}</span>
+
+      <span v-if="item.comments"> &middot; </span>
+      <a v-bind:href="item.comments" target="_blank" rel="noopener noreferrer" v-if="item.comments">Comments</a>
+
+      <span v-if="isloggedIn && item.publishedOn"> &middot; </span>
+      <a href="javascript:void(0)" v-on:click="saveItem(item._id)" v-if="isloggedIn && !item.isSaved">Save</a>
+      <a href="javascript:void(0)" v-on:click="unsaveItem(item._id)" v-if="isloggedIn && item.isSaved">Unsave</a>
+    </div>
+  </div>
+</div>

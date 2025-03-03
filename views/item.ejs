@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<%- include('partials/html-head'); -%>
+<body>
+<div class="wrap">
+  <%- include('partials/header'); -%>
+  <br />
+
+  <h1 class="page-title small"><%= item.title %></h1>
+  <div class="item">
+    <div class="meta light">
+      <% if (typeof item.channel !== 'undefined'){ %> <% if (typeof item.channel.imageURL !== 'undefined'){ %>
+        <img src="<%= item.channel.imageURL %>" v-bind:alt="<%=item.channel.title %>" />
+      <% } %>
+
+      <a href="/channel/<%= item.channel._id %>"><%= item.channel.title %></a>
+      <% } %>
+      <% if (typeof item.author !== 'undefined'){ %>
+        <span> &middot; </span>
+        <span><%= item.author %></span>
+      <% } %>
+    </div>
+  </div>
+  <article><%- item.content %></article>
+  <section>
+    <a href="<%= item.link %>" target="_blank" rel="noopener noreferrer">
+      <button>Visit link &nearr;</button>
+    </a>
+
+    <% if (typeof item.comments !== 'undefined'){ %>
+      <a href="<%= item.comments %>">
+        <button class="link">Comments &nearr;</button>
+      </a>
+    <% } %>
+  </section>
+</div>
+<%- include('partials/footer'); -%>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", () => {
+		document.querySelectorAll("article a").forEach((link) => {
+			link.setAttribute("target", "_blank");
+			link.setAttribute("rel", "noopener noreferrer");
+		});
+	});
+</script>
+</body>
+</html>

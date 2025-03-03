@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<%- include('html-head'); -%>
+<body>
+<div id="app" class="wrap">
+  <main class="wrap">
+    <section v-if="page == 'otp'">
+      <p>We have sent an one-time password to your email "{{auth.email}}", use that to sign in.</p>
+      <div>
+        <input type="number" id="otp" placeholder="Enter OTP" v-model="auth.otp" />
+        <button class="bold" v-on:click="signIn">Log in</button>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

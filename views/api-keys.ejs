@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<%- include('partials/html-head'); -%>
+<body onload="App.getMe('?apiKeys=true')">
+<div id="app" class="wrap">
+  <%- include('partials/header'); -%>
+  <h1 class="page-title">api keys</h1>
+
+  <section>
+    <div v-for="(key, i) in (me.apiKeys ?? [])" v-bind:key="key" class="item">
+      <div class="row">
+        <span>{{key}}</span>
+        <span> &middot; </span>
+        <a href="javascript:void(0)" v-on:click="deleteAPIKey(key)">Delete</a>
+      </div>
+    </div>
+    <button class="bold" v-on:click="generateAPIKey" v-bind:disabled="isSaving">Generate new API Key</button>
+  </section>
+  <section>
+    <a href="https://gist.github.com/vasanthv/297a7ebccca0d5eb9c79ef9ebb80f966" target="_blank"
+    >API Documentation</a
+    >
+  </section>
+</div>
+<%- include('partials/footer'); -%>
+</body>
+</html>

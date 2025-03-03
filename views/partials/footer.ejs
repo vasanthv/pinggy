@@ -1,0 +1,35 @@
+<footer class="small light wrap">
+  <% if (typeof user !=='undefined' ){ %>
+    <nav>
+      <span>Logged in as </span>
+      <a href="/account">
+        <%= user.username %>
+      </a>
+      <span class="separator">&middot;</span>
+      <a href="javascript:void(0)" class="red" v-on:click="logOut()">logout</a>
+    </nav>
+    <% } %>
+      <nav>
+        <a href="/about">About</a>
+        <span class="separator">&middot;</span>
+        <a href="/faq">FAQ</a>
+        <span class="separator">&middot;</span>
+        <a href="/pricing">Pricing</a>
+        <span class="separator">&middot;</span>
+        <a href="/terms">Terms</a>
+        <span class="separator">&middot;</span>
+        <a href="/privacy">Privacy</a>
+      </nav>
+
+      <nav>
+        <% if(typeof user !=="undefined" ) { %>
+          <a data-canny-link href="https://pinggy.canny.io/feature-requests" target="_blank">Feedback</a>
+          <span class="separator">&middot;</span>
+          <% } %>
+            <a href="https://pinggy.substack.com/" target="_blank">Blog</a>
+            <span class="separator">&middot;</span>
+            <a href="https://status.pinggy.com/" target="_blank">Status</a>
+      </nav>
+</footer>
+<%- include('canny'); -%>
+  <!-- INSERT_ANALYTICS_SCRIPT -->

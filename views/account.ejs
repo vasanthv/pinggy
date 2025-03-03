@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<%- include('partials/html-head'); -%>
+<body>
+<div id="app" class="wrap">
+  <%- include('partials/header'); -%>
+  <h1 class="page-title">account</h1>
+
+  <section>
+    <label for="username">Your username</label>
+    <input type="text" id="username" v-model="myAccount.username" v-bind:disabled="true" />
+
+    <label for="email">Your e-mail address</label>
+    <input
+            type="email"
+            id="email"
+            placeholder="Email address"
+            v-model="myAccount.email"
+            v-bind:class="!myAccount.isEmailVerified ? 'hasHelperText':''"
+    />
+    <div v-if="!myAccount.isEmailVerified">
+      <a href="javascript:void(0)" v-on:click="resendVerification">&orarr; Resend verification</a>
+    </div>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter new password" v-model="myAccount.password" />
+
+    <button class="bold" v-on:click="updateAccount">Update account</button>
+  </section>
+
+  <section>
+    <h3>Sort order for the items</h3>
+    <label><input type="radio" value="asc" v-on:click="onSortOrderChange" />Oldest to newest</label><br />
+    <label><input type="radio" value="desc" v-on:click="onSortOrderChange" />Newest to oldest</label>
+  </section>
+
+  <section><a href="/api-keys">Manage API keys</a><br /><br /></section>
+</div>
+<%- include('partials/footer'); -%>
+</body>
+</html>

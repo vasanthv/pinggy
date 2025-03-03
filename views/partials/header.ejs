@@ -1,0 +1,14 @@
+<%- include('toast'); -%>
+<header>
+  <nav>
+    <a href="/">HOME</a>
+    <% if(typeof user !== "undefined") { %>
+      <span class="separator">&middot;</span>
+      <a href="/channels">CHANNELS</a>
+      <span class="separator">&middot;</span>
+      <a href="/saved">SAVED</a>
+      <span class="separator">&middot;</span>
+      <a href="/account">ACCOUNT</a>
+    <% } %>
+  </nav>
+</header>

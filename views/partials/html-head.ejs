@@ -1,0 +1,47 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Cache-control" content="public" />
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" />
+  <meta name="description" content="Read all your news, social media & blogs in a single feed." />
+  <meta name="keywords" content="news reader, rss reader, atom reader" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <% if(typeof csrfToken !=="undefined" ) { %>
+    <meta name="csrf-token" content="<%= csrfToken %>" />
+    <% } %>
+      <% if(typeof user !=="undefined" ) { %>
+        <meta name="pinggy-username" content="<%= user.username %>" />
+        <% } %>
+          <% if(typeof channel !=="undefined" ) { %>
+            <meta name="pinggy-channel" content="<%= channel.id %>" />
+            <% } %>
+              <meta name="pinggy-page" content="<%= page %>" />
+
+              <!-- Icons & Theme-->
+              <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+              <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+
+              <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+              <link rel="mask-icon" href="/mask-icon.svg" color="#FF5C33" />
+              <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+              <link rel="manifest" href="/manifest.json" />
+
+              <!-- Meta data for link fetching -->
+              <meta property="og:url" content="https://pinggy.com" />
+              <meta property="og:image" content="https://pinggy.com/banner.png" />
+              <meta property="og:title" content="Pinggy" />
+              <meta property="og:description" content="A free RSS reader for the web." />
+
+              <title>
+                <%= title %>
+              </title>
+
+              <!-- Site scripts & styles -->
+              <link href="/style.css" rel="stylesheet" />
+
+              <script defer src="/vue.global.prod.js"></script>
+              <script defer src="/axios.min.js"></script>
+              <script defer src="/script.js"></script>
+</head>

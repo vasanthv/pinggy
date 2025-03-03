@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+    --background: #ffffff;
+    --background-grey: #d9d9d9;
+    --text: #161616;
+    --grey: #454545;
+    --red: #c0392b;
+    --green: #27ae60;
+    --blue: #0077ff;
+    --brand: #f22952;
+}
+
+html {
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.5;
+    transition: background 0.5s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+a,
+a:focus,
+a:active {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem !important;
+}
+
+footer a {
+    color: inherit;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+input[type="search"],
+textarea {
+    display: block;
+    border: 0.1rem solid var(--grey);
+    background: var(--background);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 420px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+input:disabled {
+    background: var(--background-light);
+    cursor: not-allowed;
+}
+
+input.hasHelperText {
+    margin-bottom: 0rem;
+}
+
+input[type="file"] {
+    margin-bottom: 1rem;
+}
+
+::placeholder {
+    color: var(--text);
+    opacity: 0.5;
+}
+
+select {
+    appearance: none;
+    background: var(--background-grey);
+    font-size: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+}
+
+button {
+    display: inline-block;
+    background: var(--text);
+    color: var(--background);
+    border: 0.1rem solid var(--text);
+    border-radius: 0.2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button.red {
+    border-color: var(--red);
+    background: var(--red);
+    color: #fff !important;
+}
+
+button.link {
+    background: none;
+    color: var(--text);
+}
+
+button.link.red {
+    background: none;
+    color: var(--red);
+}
+
+button.link.icon {
+    height: 2rem;
+    width: 2rem;
+    padding: 0px;
+    border-radius: 50%;
+    margin: 0px;
+}
+
+button.link.icon svg {
+    display: block;
+    width: 100%;
+}
+
+button.link.icon:hover {
+    border-color: var(--brand);
+}
+
+button.link.icon:hover svg path {
+    fill: var(--brand);
+}
+
+svg path {
+    fill: var(--text);
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav .separator {
+    margin: 0px 0.25rem;
+}
+
+nav a {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text);
+}
+
+section,
+article {
+    margin: 1rem 0rem;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+}
+
+article pre {
+    overflow-x: auto;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+    padding: 0px 1rem;
+    box-sizing: border-box;
+}
+
+.wrap.mini {
+    max-width: 480px;
+}
+
+.light {
+    color: var(--grey);
+}
+
+.red {
+    color: var(--red) !important;
+}
+
+.small {
+    font-size: 0.9rem;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.row {
+    padding: 1rem 0px;
+}
+
+.card {
+    background: var(--background-yellow);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.spacer {
+    height: 1rem;
+}
+
+.helperText {
+    margin-bottom: 1rem;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin: auto;
+    font-weight: 300;
+    color: var(--brand);
+    line-height: 1.15;
+}
+
+.page-title.small {
+    font-size: 2rem;
+}
+
+.empty {
+    text-align: center;
+    margin: 20vh auto;
+    width: 100%;
+    max-width: 20rem;
+}
+
+.item .title {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.item .channel img,
+.item .meta img {
+    width: 1rem;
+    margin-right: 0.25rem;
+    position: relative;
+    top: 0.1rem;
+}
+
+.item .channel a,
+.item .meta a {
+    color: inherit;
+}
+
+.item .action {
+    margin: 0px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    color: var(--text);
+    font-size: 1.5rem;
+    line-height: 0px;
+    width: 3rem;
+    height: 3rem;
+    padding: 0px;
+}
+
+.item .action.icon-bell {
+    color: var(--grey);
+    opacity: 0.8;
+}
+
+.item .action:hover {
+    background: var(--background-light);
+}
+
+#toast {
+    background-color: var(--text);
+    color: var(--background);
+    text-align: center;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 10;
+    left: 0px;
+    right: 0px;
+    top: 0rem;
+    max-height: 0;
+    margin: auto;
+    overflow: hidden;
+    font-size: 1em;
+    transition: max-height 0.25s ease-in;
+    line-height: 2;
+}
+
+#toast.show {
+    max-height: 5rem;
+}
+
+#toast.error {
+    background: var(--red);
+}
+
+#toast.success {
+    background: var(--green);
+}
+
+#search input {
+    max-width: 100%;
+}
+
+#search button {
+    margin-left: 0.5rem;
+}
+
+#intro .wrap {
+    margin-top: 10vh;
+}
+
+#intro input {
+    margin-right: 0.5rem;
+}
+
+#logo {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.25rem;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.5s;
+}
+
+#logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+#titleBar > button {
+    margin-left: 1rem;
+}
+
+#channelMeta .title {
+    font-size: 1.5rem;
+}
+
+#channelMeta > .flex {
+    align-items: flex-start;
+}
+
+#channelMeta img {
+    margin-right: 1rem;
+    position: relative;
+    top: 0.5rem;
+    width: 3rem;
+}
+
+#addURL input {
+    margin-right: 0.25rem;
+    margin-bottom: 0px;
+    max-width: none;
+}
+
+#addURL button {
+    margin-bottom: 0px;
+}
+
+#feed .item .title:visited {
+    color: var(--grey);
+}
+
+#screenshots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#screenshots img {
+    width: 100%;
+    border: 1px solid var(--background-grey);
+    border-radius: 0.5rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+}
+
+.loader {
+    width: 2rem;
+    height: 2rem;
+    background: var(--text);
+    margin: 3rem auto;
+    position: relative;
+}
+
+.loader:before {
+    content: "";
+    display: block;
+    background: var(--background);
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        height: 0rem;
+        top: 0.3rem;
+        bottom: auto;
+    }
+    25% {
+        height: 1.4rem;
+        top: 0.3rem;
+        bottom: auto;
+    }
+    26% {
+        height: 1.4rem;
+        top: auto;
+        bottom: 0.3rem;
+    }
+    50% {
+        height: 0rem;
+        top: auto;
+        bottom: 0.3rem;
+    }
+    75% {
+        height: 1.4rem;
+        top: auto;
+        bottom: 0.3rem;
+    }
+    76% {
+        height: 1.4rem;
+        top: 0.3rem;
+        bottom: auto;
+    }
+    100% {
+        height: 0rem;
+        top: 0.3rem;
+        bottom: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #000000;
+        --background-grey: #171717;
+        --text: #dadada;
+        --grey: #ababab;
+        --blue: #8cb5ff;
+        --red: #ff6d37;
+    }
+
+    .card {
+        color: var(--background);
+    }
+}
